@@ -1,0 +1,26 @@
+---
+source: src/config.rs
+expression: "super::load_config(figment::providers::Toml::string(SAMPLE_CONFIG))"
+---
+Ok:
+  system:
+    log_level: INFO
+  device:
+    - label: awesomerelay
+      topic: esphome/awesomerelay/logs
+  loki:
+    base_url: "http://localhost:3100"
+    username: user
+    password: pass
+  mqtt:
+    address: localhost
+    port: 1883
+    use_tls: false
+    username: admin
+    password: admin
+    client_id: esphomelogs2loki
+  topic2device:
+    esphome/awesomerelay/logs:
+      label: awesomerelay
+      topic: esphome/awesomerelay/logs
+

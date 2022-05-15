@@ -1,0 +1,21 @@
+[system]
+# Supports TRACE, DEBUG, INFO, WARN, and ERROR
+log_level = "INFO"
+
+[mqtt]
+address = "localhost"
+port = 1883
+use_tls = false
+username = "admin"
+password = "admin"
+client_id = "esphomelogs2loki"
+
+[loki]
+base_url = "http://localhost:3100"
+username = "user"
+password = "pass"
+
+# Duplicate this section to add multiple devices
+[[device]]
+label = "awesomerelay"
+topic = "esphome/awesomerelay/logs"
