@@ -14,6 +14,8 @@ client_id = "esphomelogs2loki"
 base_url = "http://localhost:3100"
 username = "user"
 password = "pass"
+batch_size = 256 # Send data to loki each 256 lines
+batch_timeout_seconds = 5 # Send data to loki each 5 seconds (even if batch_size is not reached)
 
 # Duplicate this section to add multiple devices
 [[device]]

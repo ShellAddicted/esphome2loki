@@ -1,3 +1,3 @@
 mod api;
 
-pub use api::LokiAPI;
+pub use api::{LokiAPI, LokiValue};

@@ -19,6 +19,7 @@ pub struct LokiPush {
     pub streams: Vec<LokiStreams>,
 }
 
+#[derive(Debug, Clone)]
 pub struct LokiAPI {
     base_url: String,
     client: reqwest::Client,

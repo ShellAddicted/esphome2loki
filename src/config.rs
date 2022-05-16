@@ -24,6 +24,8 @@ pub struct ConfigLoki {
     pub base_url: String,
     pub username: String,
     pub password: String,
+    pub batch_size: usize,
+    pub batch_timeout_seconds: u64,
 }
 
 #[derive(Debug, PartialEq, Serialize, Deserialize, Clone)]
@@ -52,6 +54,12 @@ pub fn load_config(data: impl figment::Provider) -> Result<Config, String> {
         .merge(data)
         .extract()
         .map_err(|e| e.to_string())?;
+
+    if cfg.loki.batch_size == 0 {
+        return Err("batch_size cannot be 0.".to_string());
+    } else if cfg.loki.batch_timeout_seconds == 0 {
+        return Err("batch_timeout_seconds cannot be 0.".to_string());
+    }
 
     for dev in &cfg.device {
         cfg.topic2device.insert(dev.topic.clone(), dev.clone());
