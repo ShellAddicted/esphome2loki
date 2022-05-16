@@ -12,6 +12,8 @@ Ok:
     base_url: "http://localhost:3100"
     username: user
     password: pass
+    batch_size: 256
+    batch_timeout_seconds: 5
   mqtt:
     address: localhost
     port: 1883
