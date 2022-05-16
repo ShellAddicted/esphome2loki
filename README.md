@@ -5,11 +5,11 @@ Just a bridge between [ESPHome](https://esphome.io/) devices' logs (MQTT) and [G
 *Note:* using the 'latest' tag is not recommended, you should pick a version.
 ## 1. docker-compose (recommended)
 ```yaml
-esphomelogs2loki:
-    image: ghcr.io/shelladdicted/esphome2loki:latest
-    restart: unless-stopped
-    volumes:
-        - ./data/config.toml:/config/config.toml
+esphome2loki:
+  image: ghcr.io/shelladdicted/esphome2loki:latest
+  restart: unless-stopped
+  volumes:
+    - ./data/config.toml:/config/config.toml
 ```
 ## 2. Docker
 ```bash
