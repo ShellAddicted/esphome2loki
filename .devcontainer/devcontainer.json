@@ -12,7 +12,7 @@
 		// VS Code don't watch files under ./target
 		"files.watcherExclude": {
 			"**/target/**": true
-		},
+		}
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
@@ -20,7 +20,8 @@
 		"bungcip.better-toml",
 		"vadimcn.vscode-lldb",
 		"mutantdino.resourcemonitor",
-		"matklad.rust-analyzer"
+		"matklad.rust-analyzer",
+		"ms-azuretools.vscode-docker"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
